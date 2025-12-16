@@ -11,6 +11,7 @@ body{
 }
 
 .container{
+    margin: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -22,8 +23,9 @@ body{
     justify-content: space-between;
     align-items: center;
     position: absolute;
+    max-width: 1200px;
     width: 100%;
-    padding: 68px; /*Заменить*/
+    margin: 32px 82px !important;
     box-sizing: border-box;
     z-index: 1000;
 }
@@ -43,7 +45,6 @@ body{
     font-family: 'Montserrat';
     font-weight: 400;
     font-size: 14px;
-    padding-left: 10px;
 }
 
 .logo{
@@ -57,6 +58,7 @@ body{
     gap: 30px;
     list-style: none;
     padding: 0;
+    justify-content: space-between;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -73,10 +75,7 @@ body{
     color: #fee;
 }
 
-.contact-button {
-    display: flex;
-    align-items: center;
-}
+
 
 .phone-icon {
     padding-left: 10px;
@@ -111,6 +110,80 @@ body{
     background-size: 80%;         /* Ещё меньше */
     background-position: 95% 20%;
   }
+  .nav-bar {
+    margin: 13px 19px !important;
+  }
+  .nav-links a {
+    font-size: 14px;
+  }
+  .logo-link {
+    gap: 8px;
+    margin: 0 23px 0 0;
+  }
+
+  .logo-text {
+    font-size: 10px !important;
+  }
+  .contact-button {
+    display: none;
+  }
+  .nav-links li::after {
+    display: none;
+  }
+  .contacts-grid {
+        grid-template-areas: 
+            "phones"
+            "logo"
+            "nav";
+        grid-template-columns: 1fr;
+    }
+
+    .contact-phones {
+        grid-area: phones;
+    }
+
+    .contact-logo {
+        grid-area: logo;
+    }
+
+    .contact-nav-col {
+        grid-area: nav;
+        text-align: left;
+    }
+    .contact-bottom-row {
+        flex-direction: flex;
+        display: flex;
+        justify-content: space-between;
+    }
+    .mobile-version {
+        display: block !important;
+    }
+    .dectop-version {
+        display: none !important;
+    }
+
+    .description-section{
+      padding-left: 10px !important;
+    }
+    .select-lock-section{
+      padding: 0 0 0 10px !important;
+    }
+    .faq-section{
+      padding-left: 10px !important;
+    }
+    .reviews-section{
+      padding-left: 10px !important;
+    }  
+    .contacts-title{
+      padding-left: 10px !important;
+    }
+    .faq-title{
+      padding-left: 10px !important;
+    }
+    .phones a{
+      font-size: 30px !important;
+    }
+
 }
 .description-content {
     display: flex;
@@ -124,6 +197,13 @@ body{
 .description-title { 
     gap: 32px;
 }
+
+.contact-bottom-row {
+  flex-direction: flex;
+  display: flex;
+  justify-content: space-between
+}
+
 .description-title h1 {
     font-size: 96px;
     margin-bottom: 10px;
@@ -165,8 +245,6 @@ body{
 .description-section .features-grid {
     width: 100%;
     margin-top: 40px;
-    padding-left: 100px;
-    padding-right: 100px;
     box-sizing: border-box;
 }
 
@@ -202,8 +280,8 @@ body{
 
 .select-lock-section {
   width: 100%;
-  padding: 100px 88px;
   box-sizing: border-box;
+  padding: 0 83px 0 83px;
 }
 
 .select-lock-section .lock-title h1 {
@@ -249,13 +327,15 @@ body{
   object-fit: cover;
   border-radius: 15px;
 }
-
+.big-button {
+  width: 100%;
+}
 .big-button a{
     display: flex;
     display: inline-block;
     background: #ED1C24;
     color: white;
-    width: 206%;
+    width: 100%;
     padding: 14px 24px;
     text-decoration: none;
     text-align: center;
@@ -268,11 +348,13 @@ body{
 /* === FAQ Секция === */
 .faq-section {
   width: 100%;
-  padding: 100px 88px;
+  padding: 213px 0 0 40px;
   color: #fff;
   box-sizing: border-box;
 }
-
+.faq-title {
+  padding: 0 0 0 42px;
+}
 .faq-title h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 64px;
@@ -369,7 +451,7 @@ body{
 .reviews-section {
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding: 100px 88px;
+  padding: 206px 0 0 40px;
   color: #fff;
   box-sizing: border-box;
 }
@@ -388,6 +470,7 @@ body{
   font-size: 64px;
   font-weight: 800;
   margin-bottom: 0;
+  padding: 0 0 0 42px;
 }
 
 .reviews-title h1 span {
@@ -405,11 +488,11 @@ body{
   gap: 0;
   padding: 0 20px;
   box-sizing: border-box;
+
 }
 
 .reviews-carousel-wrapper {
   width: 100%;
-  max-width: 1200px;
   overflow-x: auto;
   display: flex;
   justify-content: center;
@@ -432,12 +515,18 @@ body{
 }
 
 .review-card {
-  min-width: 280px;
-  width: 390px;
-  height: 158px;
-  background: #F2F2F2;
-  border-radius: 15px;
-  padding: 20px;
+    min-width: 280px;
+    width: 390px;
+    height: 158px;           /* фиксированная высота */
+    background: #F2F2F2;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;         /* ← ВАЖНО: вертикальный скролл */
+    scroll-behavior: smooth;
+    line-height: 1.5;
 }
 
 .review-card h3{
@@ -448,6 +537,7 @@ body{
   padding: 16px 0 22px 33px;
 }
 .review-card p{
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -455,6 +545,20 @@ body{
   padding: 0 0 53px 33px;
 }
 
+
+/* Стилизация полосы прокрутки (опционально) */
+.review-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.review-card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.review-card::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+}
 /* Адаптив */
 @media (max-width: 480px) {
   .review-card {
@@ -581,19 +685,34 @@ body{
 /* === Секция: Контакты === */
 .contacts-section {
   width: 100%;
-  padding: 80px 88px;
+  padding: 197px 0 0 82px;
   color: #fff;
   box-sizing: border-box;
 }
-
+.contact-title {
+  text-align: left;
+  max-width: 1200px;
+  margin-left: 0;
+  margin-bottom: 40px;
+  padding-left: 0;
+}
+.contact-title h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 52px;
+  color: #ED1C24;
+  font-weight: 800;
+  margin-bottom: 0;
+}
 .contacts-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   width: 100%;
+  margin: 0 auto;
   max-width: 1200px;
   text-align: center;
   align-items: center;
+  justify-content: center;
 
 }
 
@@ -615,7 +734,9 @@ body{
   font-size: 14px;
   line-height: 1.3;
 }
-
+.contact-button{
+  text-align: left;
+}
 /* Кнопка "Вызвать мастера" */
 .master-button {
   display: inline-block;
@@ -625,7 +746,7 @@ body{
   text-decoration: none;
   border-radius: 50px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   width: fit-content;
   transition: background 0.3s ease;
@@ -649,8 +770,8 @@ body{
   color: #fff;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
@@ -663,6 +784,12 @@ body{
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+}
+
+.phones a {
+  font-size: 36px;
+  font-weight: 700;
 }
 
 .phone-link {
@@ -711,6 +838,7 @@ body{
   .logo-text {
     font-size: 12px;
   }
+
 }
 
 /* На 4K и больших экранах — стабильная ширина контента */
@@ -791,6 +919,8 @@ body{
   .lock-grid {
     grid-template-columns: 1fr; /* Один столбец на очень маленьких экранах */
     gap: 25px;
+    justify-content: center;
+    align-items: center;
   }
 
   .select-lock .lock-title h1 {
