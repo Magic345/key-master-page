@@ -1,4 +1,7 @@
 @import url('../resources/fonts/Montserrat/stylesheet.css'); /*Montserrat*/
+html {
+  scroll-behavior: smooth;
+}
 *{
     margin: 0;
     padding: 0;
@@ -127,7 +130,7 @@ body{
   .contact-button {
     display: none;
   }
-  .nav-links li::after {
+  .faq {
     display: none;
   }
   .contacts-grid {
