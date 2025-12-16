@@ -11,6 +11,7 @@ html {
 
 body{
     background-color: #040404;
+    
 }
 
 .container{
@@ -25,6 +26,7 @@ body{
     display: flex;
     align-items: center;
     position: absolute;
+    justify-content: space-between;
     max-width: 1200px;
     width: 100%;
     margin: 32px 82px !important;
@@ -36,6 +38,7 @@ body{
     display: flex;
     align-items: center;
     text-decoration: none;
+    gap: 22px;
    
 }
 .logo-img{
@@ -114,6 +117,7 @@ body{
   }
   .nav-bar {
     margin: 13px 19px !important;
+    justify-content: center !important;
   }
   .nav-links a {
     font-size: 14px;
@@ -464,6 +468,7 @@ body{
   max-width: 1200px;
   margin-left: 0;
   margin-bottom: 40px;
+
   padding-left: 0;
 }
 
@@ -858,7 +863,14 @@ body{
     font-size: 22px;
   }
 }
-
+@media (min-width: 1800px) {
+  body {
+    padding: 0 15% 0 15% !important;
+  }
+  .reviews-title {
+    padding-left: 20%;
+  }
+}
 
 
 /* Адаптив */
@@ -935,8 +947,8 @@ body{
 }
 
 
-/* Адаптив: до 768px — 2 колонки */
-@media (max-width: 768px) {
+
+@media (max-width: 1040px) {
     .description-section .features-grid {
         padding-left: 20px;
         padding-right: 20px;
@@ -951,7 +963,7 @@ body{
 
 
 
-@media (max-width: 744px) {
+@media (max-width: 1030px) {
     .description-content {
         padding-left: 20px;
         padding-right: 20px;
